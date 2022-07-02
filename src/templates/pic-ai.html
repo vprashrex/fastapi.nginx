@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="picai.dev is a PhotoMatte tool optimized for selfie and portrait photos.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    
+    <!-- <meta name="twitter:card" content="" /> -->
+    <!-- <meta name="twitter:site" content="https://silueta.me" /> -->
+    <!-- <meta name="twitter:title" content="Silueta.me" /> -->
+    <!-- <meta name="twitter:description" content="Silueta.me is a background segmentation tool optimized for selfie and portrait photos." /> -->
+    <!-- <meta name="twitter:image" content="" /> -->
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Web Starter Kit">
+    <!--<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">-->
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="static/css/normalize.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/fonts/fonts.css">
+    <!-- JS Libs -->
+    <script src="static/js/libs.min.js"></script>
+
+</head>
+<body>
+    <div>
+        <nav>
+			<span id="bot_logo_mobile"><img src="static/img/pic_ai_logo.svg" width="100%" height="100%" /></span>
+            <ul>
+                <li><span id="bot_nav_2" class="bot_nav_txt"></span></li>
+				<li id="bot_nav_logo_li"><span id="bot_nav_0"><img src="static/img/pic_ai_logo.svg" width="100%" height="auto" /></span></li>
+                <li><span id="bot_nav_3" class="bot_nav_txt"></span></li>
+            </ul>
+            <div id="nav_shadow"></div>
+        </nav>
+        <section id="sec_1">
+            
+        </section>
+        <section id="sec_2">
+            <div class="content_wrap">
+                <div id="sec_2_canvas_cont">
+                    <div id="sec_2_canvas_wrap_1">
+                        <canvas id="canvas_input" width="600" height="600"></canvas>
+                        <h4 id="sec_2_canvas_tit_1">Original image<br />
+                            <strong id="sec_2_img_orig_dim">2359x2359px</strong>
+                        </h4>
+                        <div id="sec_2_bot_1" class="gen_bot">Select your image</div><br />
+                        <div id="sec_2_drop_1" class="gen_drop">Or DROP it anywhere <img class="gen_drop_icon" src="static/img/85fb3920e4277b8cb854.svg" width="20" height="20" />
+                        </div>
+                    </div>
+                    <div id="sec_2_canvas_wrap_2">
+                        <canvas id="canvas_output" width="600" height="600"></canvas>
+                        <h4 id="sec_2_canvas_tit_2">Portrait matte image<br />
+                            <strong id="sec_2_img_alpha_dim">2359x2359px</strong>
+                        </h4>
+                        <div id="sec_2_bot_2" class="gen_bot">Download</div><br />
+                        <div id="sec_2_drop_2" class="gen_drop">Or DROP it anywhere <img class="gen_drop_icon" src="static/img/85fb3920e4277b8cb854.svg" width="20" height="20" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <div id="full_cover_loader">
+            <div id="loader_cont">
+                <div id="loader_wrap">
+                    <canvas id="loader_canvas" width="160" height="160"></canvas>
+                    <div id="loader_copy">Processing...</div>
+                    <p>(15secs max depending on complexity of the image)</p>
+                </div>
+            </div>
+        </div>
+        <div id="full_cover">
+            <div id="info_cont">
+                <div id="info_wrap">
+                    <div id="info_0" class="info_wrap_messages"><strong>The image has an unsupported filetype.</strong><br /><br />You must select a .webp, .png or .jpg photo.<br /><br /></div>
+                    <div id="info_1" class="info_wrap_messages"><strong>Your image dimensions are invalid.</strong><br /><br />Image width and height must be less than 6000px.<br /><br /></div>
+                    <div id="info_2" class="info_wrap_messages"><strong>There was a network problem.</strong><br /><br />Please check your connection and try again in a few seconds.<br /><br /></div>
+                    <div id="info_3" class="info_wrap_messages"><strong>Image could not be loaded.</strong><br /><br />Please try with another image.<br /><br /></div>
+                    <div id="info_4" class="info_wrap_messages"><strong>No image selected.</strong><br /><br />Please select a selfie/portrait photo.<br /><br /></div>
+                    <div id="info_5" class="info_wrap_messages"><strong>Server is starting.</strong><br /><br />Please try again in a few seconds.<br /><br /></div>
+                    
+                    <div id="info_bot" class="gen_bot">Got it!</div>
+                </div>
+                <div id="drop_wrap">
+                    <div id="drop_info"><span id="drop_info_copy_1">Drag & drop an image</span><br/><span id="drop_info_copy_2">(Max result size 2048x2048px - WebP, PNG or JPEG - 50Mb)</span><br/><br/><img src="static/img/85fb3920e4277b8cb854.svg" width="120" height="120" /></div>
+                </div>
+                <div id="loader_wrap">
+                    <canvas id="loader_canvas" width="160" height="160"></canvas>
+                    <div id="loader_copy">Processing...</div>
+                </div>
+            </div>
+        </div>
+        <div id="form">
+            <input type="file" id="input-foto" accept="image/*" name="foto" value="">
+            <a id="download_a" href=""></a>
+        </div>
+    </div>
+    
+        <script src="static/js/2.min.js"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9G15EWRZ8G');
+    </script>
+  </body>
+</html>

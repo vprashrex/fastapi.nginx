@@ -5,3 +5,8 @@ gunicorn
 requests
 pytest
 pre-commit
+opencv-python
+Pillow
+onnx
+onnxruntime
+imageio

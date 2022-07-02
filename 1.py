@@ -1,3 +1,3 @@
 import requests
-r = requests.get("http://0.0.0.0:8080/")
+r = requests.get("http://localhost:8000/")
 print(r.headers['Server'])

@@ -1,7 +1,11 @@
 FROM python:3.8-slim
 
 COPY . /app
+COPY ./src/static /app/static
 COPY ./src/templates /app/templates
+COPY ./src/utils.py /app/utils.py
+COPY ./src/inference.py /app/inference.py
+
 WORKDIR /app
 
 RUN apt-get update && \
@@ -11,6 +15,9 @@ RUN apt-get update && \
     python3-setuptools \
     gcc \
     make
+
+RUN apt-get update
+RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 # Create a virtual environment in /opt
 RUN python3 -m venv /opt/venv
